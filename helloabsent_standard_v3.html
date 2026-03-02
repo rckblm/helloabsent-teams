@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>HelloAbsent – Wenn dein Team mehr trägt als es sollte</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#fdf6ee;color:#1a1a1a;line-height:1.65;-webkit-font-smoothing:antialiased;max-width:480px;margin:0 auto}
+nav{background:#fdf6ee;padding:14px 20px;border-bottom:1px solid #eadac8;text-align:center;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:#1a1a1a}
+.nav-cta{float:right;margin-top:-2px;background:#e8920a;color:white;padding:6px 14px;border-radius:6px;font-size:0.78rem;font-weight:700;text-decoration:none}
+.section{padding:40px 24px}
+.warm{background:#f5e6d3}
+.dark{background:#1a1a1a}
+/* HERO */
+.hero{padding:36px 24px 32px}
+.pre{font-size:0.82rem;color:#8a6a4a;text-decoration:underline;font-weight:500;display:block;text-align:center;margin-bottom:20px}
+h1{font-size:1.75rem;font-weight:900;line-height:1.2;text-align:center;color:#1a1a1a;margin-bottom:20px}
+.hl{border-bottom:3px solid #e8920a;padding-bottom:2px}
+.hero-sub{font-size:0.97rem;color:#5a4a3a;text-align:center;line-height:1.7;margin-bottom:24px}
+.ideal{background:#f5e6d3;border-radius:12px;padding:16px 20px;margin-bottom:28px;font-size:0.9rem;color:#5a4a3a;line-height:1.65;text-align:center;border:1px solid #eadac8}
+.ideal em{font-style:normal;font-weight:700;color:#1a1a1a}
+.btn{display:block;width:100%;background:#e8920a;color:white;padding:18px 20px;border-radius:10px;font-size:1.05rem;font-weight:800;text-align:center;text-decoration:none;box-shadow:0 4px 16px rgba(232,146,10,.35)}
+.btn-sub{text-align:center;font-size:0.78rem;color:#8a6a4a;margin-top:10px}
+.btn-ghost{display:block;width:100%;background:transparent;color:#8a6a4a;padding:14px 20px;border-radius:10px;font-size:0.9rem;font-weight:600;text-align:center;text-decoration:none;border:1.5px solid #d4b896;margin-top:10px}
+/* PROOF BAR */
+.proof-bar{background:#1a1a1a;padding:24px}
+.proof-grid{display:grid;grid-template-columns:1fr 1fr}
+.proof-item{padding:0 12px;text-align:center}
+.proof-item:first-child{border-right:1px solid rgba(255,255,255,.1)}
+.pnum{font-family:'DM Serif Display',serif;font-size:1.6rem;color:#e8920a;display:block;margin-bottom:4px}
+.plbl{font-size:0.8rem;color:rgba(255,255,255,.7);line-height:1.45}
+.psrc{font-size:0.65rem;color:rgba(255,255,255,.35);display:block;margin-top:3px}
+/* COMMON */
+.s-label{font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#e8920a;margin-bottom:12px;display:block}
+h2{font-family:'DM Serif Display',serif;font-size:1.5rem;line-height:1.15;color:#1a1a1a;margin-bottom:14px;font-weight:400}
+h2 em{font-style:italic;color:#e8920a}
+h2.inv{color:white}
+.s-body{font-size:0.95rem;color:#5a4a3a;line-height:1.75;margin-bottom:20px}
+/* CHECKS */
+.checks{list-style:none;margin-bottom:24px}
+.checks li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #eadac8;font-size:0.92rem;color:#1a1a1a;line-height:1.55}
+.checks li:last-child{border:none}
+.ci{color:#e8920a;font-size:1.1rem;flex-shrink:0;margin-top:1px;font-weight:700}
+/* INFO BOX */
+.infobox{background:white;border-radius:12px;padding:16px 18px;border:1px solid #eadac8}
+.infobox p{font-size:0.88rem;color:#1a1a1a;line-height:1.65}
+.infobox .src{font-size:0.72rem;color:#8a6a4a;margin-top:8px}
+/* FORMAT CARDS */
+.fcards{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.fc{background:#fdf6ee;border-radius:12px;padding:16px 18px;border:1px solid #eadac8;display:flex;gap:14px;align-items:flex-start}
+.fc-num{width:32px;height:32px;border-radius:50%;background:#e8920a;color:white;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:800;flex-shrink:0}
+.fc-title{font-size:0.9rem;font-weight:700;color:#1a1a1a;margin-bottom:3px}
+.fc-body{font-size:0.82rem;color:#5a4a3a;line-height:1.55}
+/* STATS */
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.stat-box-warm{background:white;border-radius:12px;padding:18px 14px;text-align:center;border:1px solid #eadac8}
+.stat-box-warm.accent{background:#fdf6ee;border:2px solid #e8920a}
+.sn-w{font-family:'DM Serif Display',serif;font-size:1.8rem;color:#e8920a;line-height:1;display:block;margin-bottom:4px}
+.sl-w{font-size:0.75rem;color:#5a4a3a;line-height:1.4}
+.ssrc-w{font-size:0.65rem;color:#a08060;display:block;margin-top:4px}
+/* QUOTES */
+.qcard{background:white;border-radius:12px;padding:20px 18px;border:1px solid #eadac8;margin-bottom:12px;border-left:4px solid #e8920a}
+.qcard:last-child{margin-bottom:0}
+.qt{font-size:0.92rem;color:#1a1a1a;line-height:1.7;font-style:italic;margin-bottom:14px}
+.qn{font-size:0.85rem;font-weight:700;color:#1a1a1a}
+.qr{font-size:0.75rem;color:#8a6a4a;margin-top:1px}
+/* LOGOS */
+.logos-lbl{font-size:0.75rem;color:#8a6a4a;text-align:center;margin-bottom:14px;font-weight:500}
+.logos-flex{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 10px;margin-bottom:28px}
+.lpill{font-size:0.82rem;font-weight:700;color:#a08060;background:white;border:1px solid #eadac8;border-radius:6px;padding:6px 12px}
+/* BEIRAT */
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px}
+.bitem{background:white;border-radius:10px;padding:12px 14px;border:1px solid #eadac8}
+.bname{font-size:0.82rem;font-weight:800;color:#1a1a1a}
+.bdesc{font-size:0.72rem;color:#8a6a4a;margin-top:2px}
+/* FOOTER CTA */
+.fcta{background:#e8920a;padding:40px 24px;text-align:center}
+.fcta h2{font-family:'DM Serif Display',serif;font-size:1.55rem;color:white;margin-bottom:12px;font-weight:400}
+.fcta p{font-size:0.9rem;color:rgba(255,255,255,.85);margin-bottom:24px;line-height:1.65}
+.btn-wh{display:block;background:white;color:#e8920a;padding:17px 20px;border-radius:10px;font-size:1rem;font-weight:800;text-align:center;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-top:16px}
+.fpill{font-size:0.72rem;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:4px}
+.fpill::before{content:"✓";color:white;font-weight:800}
+footer{background:#1a1a1a;color:rgba(255,255,255,.45);padding:20px 24px;text-align:center;font-size:0.75rem}
+footer a{color:rgba(255,255,255,.45);text-decoration:underline;margin:0 8px}
+.flogo{font-family:'DM Serif Display',serif;font-size:0.95rem;color:rgba(255,255,255,.7);margin-bottom:8px;display:block}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#kontakt" class="nav-cta">Gespräch anfragen</a>
+  <span class="nav-logo">HelloAbsent</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="pre">Für Führungskräfte und HR-Verantwortliche, die Arbeitsfähigkeit sichern wollen</span>
+  <h1>Wie du dein Team durch die <span class="hl">KI-Transformation</span> führst – ohne dass die Menschen dabei verloren gehen</h1>
+  <p class="hero-sub">KI übernimmt Ausführung. Der Engpass wird menschlich: kognitiv, emotional, sozial. HelloAbsent begleitet Teams und Führungskräfte durch diesen Übergang – wissenschaftlich fundiert, in 90 Tagen, mit Formaten die im Arbeitsalltag funktionieren.</p>
+  <div class="ideal">
+    Ideal, wenn dein Team <em>Bedeutungsverlust, kognitive Überlastung oder Orientierungslosigkeit</em> erlebt – und du weißt, dass eine App das nicht löst.
+  </div>
+  <a href="#kontakt" class="btn">Kostenloses Erstgespräch anfragen</a>
+  <p class="btn-sub">30 Minuten · kein Pitch · konkrete Zahlen für dein Team</p>
+  <a href="#wie" class="btn-ghost">▷ Mehr erfahren</a>
+</div>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-grid">
+    <div class="proof-item">
+      <span class="pnum">9 %</span>
+      <span class="plbl">emotional engagierte MA in Deutschland</span>
+      <span class="psrc">Gallup 2024 – Allzeittief</span>
+    </div>
+    <div class="proof-item">
+      <span class="pnum">1:5,6</span>
+      <span class="plbl">ROI evidenzbasierter Resilienzprogramme</span>
+      <span class="psrc">Deloitte / WHO 2024</span>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOS -->
+<div class="section">
+  <div class="logos-lbl">Netzwerk & Beirat aus führenden Unternehmen</div>
+  <div class="logos-flex">
+    <span class="lpill">Allianz</span><span class="lpill">GIZ</span><span class="lpill">Mercedes-Benz</span>
+    <span class="lpill">Bosch</span><span class="lpill">Deutsche Bahn</span><span class="lpill">Fraunhofer</span>
+    <span class="lpill">MetaFinanz</span><span class="lpill">EnBW</span><span class="lpill">ARD/ZDF</span><span class="lpill">Intersnack</span>
+  </div>
+</div>
+
+
+<!-- KI-ÄRA KONTEXT -->
+<div class="section warm">
+  <span class="s-label">Der Kontext – KI-Ära</span>
+  <h2>Die Arbeit verändert sich. <em>Menschen auch.</em></h2>
+  <p class="s-body">KI übernimmt Ausführungsarbeit. Was bleibt, ist kognitiv anspruchsvoller – und menschlich erschöpfender. Wer das ignoriert, riskiert stille Krisen.</p>
+  <ul class="checks">
+    <li><span class="ci">✓</span><span>1 Stunde Entscheidungen erschöpft das Gehirn mehr als 4 Stunden E-Mails abarbeiten</span></li>
+    <li><span class="ci">✓</span><span>Bedeutungsverlust fühlt sich wie Burnout an – ist aber anders und braucht andere Antworten</span></li>
+    <li><span class="ci">✓</span><span>Wenn KI häufigster "Gesprächspartner" wird, verlieren Teams soziale Fasern und Vertrauen</span></li>
+    <li><span class="ci">✓</span><span>50 % der Org. führen bis 2026 KI-freie Kompetenztests ein – kritisches Denken verkümmert (Gartner)</span></li>
+  </ul>
+  <div class="infobox" style="border-left:4px solid #4f46e5">
+    <p><strong>Der Engpass der KI-Ära ist nicht Technologie.</strong> Er ist organisierte menschliche Kapazität – kognitiv, emotional, sozial. Genau das ist das Spielfeld von HelloAbsent.</p>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<div class="section warm">
+  <span class="s-label">Was wir täglich sehen</span>
+  <h2>Was in Organisationen <em>gerade passiert</em></h2>
+  <ul class="checks">
+    <li><span class="ci">✓</span><span>Dein Team hat ständig zu viele Themen gleichzeitig – niemand weiß mehr, was wirklich Priorität hat</span></li>
+    <li><span class="ci">✓</span><span>Rollen und Verantwortlichkeiten sind unklar, Doppelarbeit und stille Konflikte häufen sich</span></li>
+    <li><span class="ci">✓</span><span>Remote-Kollegen oder mehrere Standorte – das Team fühlt sich nie wirklich wie ein Team an</span></li>
+    <li><span class="ci">✓</span><span>Erschöpfung ist spürbar, aber niemand spricht es an – kein Raum, keine Sprache dafür</span></li>
+    <li><span class="ci">✓</span><span>Neue Führungskräfte sollen gleichzeitig Vertrauen aufbauen <strong>und</strong> Ergebnisse liefern</span></li>
+    <li><span class="ci">✓</span><span>KI spart Zeit – aber niemand hat eine Antwort darauf, was Menschen dann tun sollen und wofür sie noch stehen</span></li>
+  </ul>
+  <div class="infobox">
+    <p><strong>Das Problem:</strong> 73 % der HR-Leiter sagen, ihre Teams sind veränderungsmüde. Die Bereitschaft zur Veränderung ist in sechs Jahren von 74 % auf 43 % gesunken. Und 61 % sehen sich als burnout-gefährdet.</p>
+    <p class="src">Gartner 2024 · Pronova BKK 2024</p>
+  </div>
+</div>
+
+<!-- WIE -->
+<div class="section" id="wie">
+  <span class="s-label">So funktioniert es</span>
+  <h2>Vier Formate. <em>Echter Wandel.</em></h2>
+  <p class="s-body">Kein Selbstoptimierungsdruck. Keine Folien-Marathons. Formate, die in echten Teams mit echten Zeitbudgets funktionieren.</p>
+  <div class="fcards">
+    <div class="fc"><div class="fc-num">01</div><div><div class="fc-title">Team-Kickoff (½ Tag vor Ort)</div><div class="fc-body">Standortbestimmung, gemeinsame Sprache für schwierige Phasen, konkrete Verabredungen. Kein Folien-Marathon.</div></div></div>
+    <div class="fc"><div class="fc-num">02</div><div><div class="fc-title">3 × Führungsimpuls-Session (je 2h)</div><div class="fc-body">Führen ohne falsche Versprechen. Schwierige Gespräche. Eigene Stabilität sichern – du bist kein Held, du bist eine Person.</div></div></div>
+    <div class="fc"><div class="fc-num">03</div><div><div class="fc-title">Peer Circles (4–8 Personen)</div><div class="fc-body">Moderierte Kleingruppen. Echte Themen, vertraulicher Rahmen, kein Protokoll, kein Tracking einzelner Personen.</div></div></div>
+    <div class="fc"><div class="fc-num">04</div><div><div class="fc-title">KI-Lernbegleiter (optional, 5 Min/Tag)</div><div class="fc-body">Adaptive Mikroeinheiten für Einzelpersonen: Priorisierung, Fokus, Kommunikation. Ergänzend zu den Live-Formaten.</div></div></div>
+  </div>
+  <ul class="checks">
+    <li><span class="ci">✓</span><span>Pilot ab 10 Personen · Start in 2 Wochen · CAPEX = 0</span></li>
+    <li><span class="ci">✓</span><span>Kein IT-Projekt · DSGVO-konform · kein Tracking einzelner Personen</span></li>
+    <li><span class="ci">✓</span><span>§ 5 ArbSchG-konform – unterstützt psychische Gefährdungsbeurteilung</span></li>
+    <li><span class="ci">✓</span><span>Betriebsrat-freundlich durch datenschutzkonformes Design</span></li>
+  </ul>
+</div>
+
+<!-- ZAHLEN -->
+<div class="section warm">
+  <span class="s-label">Der Business Case</span>
+  <h2>Was es kostet. <em>Was es bringt.</em></h2>
+  <div class="stat-row">
+    <div class="stat-box-warm"><span class="sn-w">342</span><span class="sl-w">psych. Fehltage / 100 Versicherte – Rekordhoch</span><span class="ssrc-w">DAK 2025</span></div>
+    <div class="stat-box-warm"><span class="sn-w">85 %</span><span class="sl-w">DACH-Org. mit akuter Change Fatigue</span><span class="ssrc-w">FTI 2026</span></div>
+    <div class="stat-box-warm accent"><span class="sn-w">74 T€</span><span class="sl-w">Ø Fluktuations­kosten pro Fachkraft</span><span class="ssrc-w">Gallup 2024</span></div>
+    <div class="stat-box-warm accent"><span class="sn-w">1:5,6</span><span class="sl-w">ROI evidenz­basierter Resilienz­programme</span><span class="ssrc-w">Deloitte/WHO</span></div>
+  </div>
+  <div class="infobox" style="border-left:4px solid #e8920a;">
+    <p><strong>Konkret gerechnet:</strong> Eine verhinderte Kündigung (Ø 74.000 €) deckt mehrere hundert Teilnehmerplätze. Krankenstand –1 Tag × 20 MA = ca. 7.300 € gespart pro Jahr. ROI-Faktor: 1:5,6.</p>
+  </div>
+</div>
+
+<!-- QUOTES -->
+<div class="section warm">
+  <span class="s-label">Was Teams berichten</span>
+  <h2>Echte Stimmen. <em>Aus echten Phasen.</em></h2>
+  <div class="qcard"><p class="qt">„Ich war neu im Team und hatte keinen Rahmen. HelloAbsent hat mir genau das gegeben – ohne dass es nach Weiterbildung klingt."</p><div class="qn">Thomas K.</div><div class="qr">Teamleiter (neu), Produktion, 18 Personen</div></div>
+  <div class="qcard"><p class="qt">„Drei Standorte, Remote-Kollegen – das Team hat sich nie richtig wie ein Team angefühlt. Die Peer Circles haben das verändert. Wirklich."</p><div class="qn">Jana R.</div><div class="qr">Bereichsleiterin, Mittelstand, 3 Standorte</div></div>
+  <div class="qcard"><p class="qt">„Das erste Mal seit Monaten hatte ich das Gefühl: Ich muss das nicht alleine tragen."</p><div class="qn">Teamleiterin</div><div class="qr">Software-Entwicklung, 18 Personen</div></div>
+  <div class="qcard"><p class="qt">„Kein Tracking, keine Ergebnisse einzelner Personen nach oben. Das hat die Skepsis in einer Woche aufgelöst."</p><div class="qn">Andrea W.</div><div class="qr">Betriebsratsvorsitzende, Industrieunternehmen</div></div>
+</div>
+
+<!-- BEIRAT -->
+<div class="section">
+  <span class="s-label">Wissenschaft trifft Praxis</span>
+  <h2>Beirat & <em>Partnernetzwerk</em></h2>
+  <p class="s-body">Unser Beirat kommt aus Organisationen, die selbst wissen, was herausfordernde Transformationsphasen bedeuten.</p>
+  <div class="bgrid">
+    <div class="bitem"><div class="bname">Mercedes-Benz</div><div class="bdesc">HR Development</div></div>
+    <div class="bitem"><div class="bname">GIZ</div><div class="bdesc">Internat. Zusammenarbeit</div></div>
+    <div class="bitem"><div class="bname">EnBW</div><div class="bdesc">People & Transformation</div></div>
+    <div class="bitem"><div class="bname">Bosch Group</div><div class="bdesc">Corporate Health</div></div>
+    <div class="bitem"><div class="bname">MetaFinanz</div><div class="bdesc">Organisationsentw.</div></div>
+    <div class="bitem"><div class="bname">Fraunhofer</div><div class="bdesc">Arbeitsforschung</div></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="fcta" id="kontakt">
+  <h2>Bereit für den<br>ersten Schritt?</h2>
+  <p>Lass uns 30 Minuten rechnen – was der aktuelle Zustand dein Team kostet und was sich mit einem Pilot konkret verändern kann.</p>
+  <a href="/cdn-cgi/l/email-protection#8be3eae7e7e4cbe3eee7e7e4eae9f8eee5ffa5efee" class="btn-wh">Jetzt Gespräch anfragen</a>
+  <div class="facts">
+    <span class="fpill">Ab 10 Personen</span><span class="fpill">Start in 2 Wochen</span>
+    <span class="fpill">CAPEX = 0</span><span class="fpill">DSGVO-konform</span>
+  </div>
+</div>
+
+<footer>
+  <span class="flogo">HelloAbsent</span>
+  <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="650d0409090a250d0009090a040716000b114b0100">[email&#160;protected]</a> · www.helloabsent.de<br>
+  <div style="margin-top:10px"><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+  <div style="margin-top:12px;font-size:0.65rem;opaci
